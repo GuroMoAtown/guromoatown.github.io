@@ -26,6 +26,11 @@
         .evidence-card { border: 2px dashed #cbd5e1; background-color: #f8fafc; transition: all 0.3s; }
         .evidence-card:hover { border-color: #ef4444; background-color: #fff1f2; }
         .toc-link:hover { color: #ef4444; text-decoration: underline; }
+        .report-image { 
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            border: 1px solid #e2e8f0;
+            margin-bottom: 2rem;
+        }
     </style>
 </head>
 <body>
@@ -61,91 +66,26 @@
     </div>
 </header>
 
-<main class="max-w-5xl mx-auto px-4 py-12">
-    <!-- 목차 섹션 -->
-    <section id="toc" class="report-card p-6 md:p-8 mb-12 bg-slate-50 border-none">
-        <h3 class="text-xl font-extrabold mb-6 flex items-center">
-            <span class="mr-2">📋</span> 전체 보고서 목차
-        </h3>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <ul class="space-y-3 font-semibold text-slate-700">
-                <li><a href="#chapter1" class="toc-link">1. 무단 자금 집행 및 차입 실태</a></li>
-                <li><a href="#chapter2" class="toc-link">2. 지출 항목 상세 분석 (0원의 진실)</a></li>
-                <li><a href="#chapter3" class="toc-link">3. 독박 부채 추산 (8,000만 원의 위협)</a></li>
-                <li><a href="#chapter4" class="toc-link">4. 대의원·조합장 면담 녹취록</a></li>
-            </ul>
-            <ul class="space-y-3 font-semibold text-slate-700">
-                <li><a href="#chapter5" class="toc-link">5. 정보공개 거부 및 확보 경위</a></li>
-                <li><a href="#chapter6" class="toc-link">6. 결정적 증거: 자백 녹취 3건</a></li>
-                <li><a href="#chapter7" class="toc-link">7. 조합원 행동 지침 및 결론</a></li>
-            </ul>
-        </div>
-    </section>
-
-    <!-- 서문 -->
-    <section id="intro" class="mb-20 text-center">
-        <div class="max-w-3xl mx-auto italic text-lg text-slate-600 leading-relaxed">
-            "조합원 여러분의 소중한 자산과 분담금을 지키기 위해 이 보고서를 바칩니다. 철저한 사실관계 확인과 투명하고 정확한 증거 수집을 진행하였습니다."
-        </div>
-        <div class="mt-6 font-bold text-slate-900">— 임시총회 발의자 일동 —</div>
-    </section>
-
-    <!-- 제1장: 무단 자금 집행 -->
-    <section id="chapter1" class="mb-24 space-y-8">
-        <div class="border-b-4 border-slate-900 pb-4">
-            <h2 class="text-2xl md:text-3xl font-black text-slate-900">1. 주민 동의·대의원회 승인도 없이 위법한 방법으로 2,728만 원 탕진!</h2>
-        </div>
-        
-        <div class="highlight-box">
-            <h4 class="text-red-700 font-extrabold text-xl mb-2 underline decoration-red-300">대의원회 승인 전면 무시!</h4>
-            <p class="text-slate-800 leading-relaxed font-medium">
-                절차를 지키지 않고 개인 사업처럼 주민 몰래 사전 승인 없는 확인된 무단 지출만 2,728만 원, 
-                그대로 뒀다면 <span class="bg-yellow-200 px-1">"8,000만 원" 독박 쓸 뻔했습니다!</span>
-            </p>
-        </div>
-
-        <div class="text-slate-700 leading-loose space-y-4 text-justify">
-            <p>대의원 당선인들이 2026년 5월 16일 조합사무실을 항의 방문하여 163분간의 혈투 끝에 확보한 결산내역 (1월~4월), 이사회 회의록(6회)과 면담 사실을 통해 추가로 드러난 조합원 동의 없이 집행된 무단 자금 사용 실태를 투명하게 공개합니다.</p>
-            <p>조합원 여러분, 정비사업에서 주민들의 돈을 쓸 때는 반드시 주민 대표 기구인 '대의원회'의 사전 심의와 적법한 의결 승인을 거쳐야 합니다. 하지만 해임 대상자 조합장 이민섭과 이사 박지환, 김용신, 김순자, 조항필 5인은 이러한 법적 절차를 완전히 무시한 채 위법한 이사회를 핑계 삼아 주민 몰래 돈을 차입하여 무단 집행하였습니다.</p>
-        </div>
-
-        <div class="report-card">
-            <div class="bg-slate-800 text-white p-4 font-bold">※ 확보된 결산내역(1월~4월) 차입내역 정리</div>
-            <div class="overflow-x-auto">
-                <table class="w-full text-sm text-left">
-                    <thead class="bg-slate-100 border-b">
-                        <tr>
-                            <th class="p-4">차입 일자</th>
-                            <th class="p-4">차입처(직책)</th>
-                            <th class="p-4 text-right">차입 금액</th>
-                            <th class="p-4 text-center">비고</th>
-                        </tr>
-                    </thead>
-                    <tbody id="borrowTable"></tbody>
-                </table>
-            </div>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center bg-amber-50 p-6 rounded-2xl border border-amber-200">
-            <div>
-                <h4 class="font-bold text-amber-900 mb-3 text-lg">"쌈짓돈처럼 주무른 불법 개인 계좌"</h4>
-                <p class="text-sm text-amber-800 mb-4 leading-relaxed italic">
-                    정식 조합 계좌가 아닌 조합장 개인의 계좌를 개설하여 구멍가게 쌈짓돈처럼 주무르고 있었습니다. 
-                    A-1구역이 아직 인가를 못 받았다는 핑계로 개인 명의를 사용한 것은 명백한 자백입니다.
-                </p>
-                <div class="p-4 bg-white rounded border border-amber-300 font-mono text-center shadow-inner">
-                    <span class="block text-xs text-slate-500 mb-1">우리은행 계좌번호</span>
-                    <strong class="text-lg">1002-166-947453</strong><br>
-                    <span class="text-slate-700">예금주: 이민섭</span>
-                </div>
-            </div>
-            <div class="chart-container">
-                <canvas id="borrowChart"></canvas>
-            </div>
-        </div>
-    </section>
-
-</main>
+        <main class="flex flex-col items-center">
+            <!-- 페이지 순서에 맞춰 나열 (1~17) -->
+            <img src="images/1784100014994-64862b97-a81c-4aeb-a2e8-09dfcaff2845_1.jpg" alt="보고서 1페이지" class="report-image w-full h-auto rounded-sm" loading="lazy">
+            <img src="images/1784100014994-64862b97-a81c-4aeb-a2e8-09dfcaff2845_2.jpg" alt="보고서 2페이지" class="report-image w-full h-auto rounded-sm" loading="lazy">
+            <img src="images/1784100014994-64862b97-a81c-4aeb-a2e8-09dfcaff2845_3.jpg" alt="보고서 3페이지" class="report-image w-full h-auto rounded-sm" loading="lazy">
+            <img src="images/1784100014994-64862b97-a81c-4aeb-a2e8-09dfcaff2845_4.jpg" alt="보고서 4페이지" class="report-image w-full h-auto rounded-sm" loading="lazy">
+            <img src="images/1784100014994-64862b97-a81c-4aeb-a2e8-09dfcaff2845_5.jpg" alt="보고서 5페이지" class="report-image w-full h-auto rounded-sm" loading="lazy">
+            <img src="images/1784100014994-64862b97-a81c-4aeb-a2e8-09dfcaff2845_6.jpg" alt="보고서 6페이지" class="report-image w-full h-auto rounded-sm" loading="lazy">
+            <img src="images/1784100014994-64862b97-a81c-4aeb-a2e8-09dfcaff2845_7.jpg" alt="보고서 7페이지" class="report-image w-full h-auto rounded-sm" loading="lazy">
+            <img src="images/1784100014994-64862b97-a81c-4aeb-a2e8-09dfcaff2845_8.jpg" alt="보고서 8페이지" class="report-image w-full h-auto rounded-sm" loading="lazy">
+            <img src="images/1784100014994-64862b97-a81c-4aeb-a2e8-09dfcaff2845_9.jpg" alt="보고서 9페이지" class="report-image w-full h-auto rounded-sm" loading="lazy">
+            <img src="images/1784100014994-64862b97-a81c-4aeb-a2e8-09dfcaff2845_10.jpg" alt="보고서 10페이지" class="report-image w-full h-auto rounded-sm" loading="lazy">
+            <img src="images/1784100014994-64862b97-a81c-4aeb-a2e8-09dfcaff2845_11.jpg" alt="보고서 11페이지" class="report-image w-full h-auto rounded-sm" loading="lazy">
+            <img src="images/1784100014994-64862b97-a81c-4aeb-a2e8-09dfcaff2845_12.jpg" alt="보고서 12페이지" class="report-image w-full h-auto rounded-sm" loading="lazy">
+            <img src="images/1784100014994-64862b97-a81c-4aeb-a2e8-09dfcaff2845_13.jpg" alt="보고서 13페이지" class="report-image w-full h-auto rounded-sm" loading="lazy">
+            <img src="images/1784100014994-64862b97-a81c-4aeb-a2e8-09dfcaff2845_14.jpg" alt="보고서 14페이지" class="report-image w-full h-auto rounded-sm" loading="lazy">
+            <img src="images/1784100014994-64862b97-a81c-4aeb-a2e8-09dfcaff2845_15.jpg" alt="보고서 15페이지" class="report-image w-full h-auto rounded-sm" loading="lazy">
+            <img src="images/1784100014994-64862b97-a81c-4aeb-a2e8-09dfcaff2845_16.jpg" alt="보고서 16페이지" class="report-image w-full h-auto rounded-sm" loading="lazy">
+            <img src="images/1784100014994-64862b97-a81c-4aeb-a2e8-09dfcaff2845_17.jpg" alt="보고서 17페이지" class="report-image w-full h-auto rounded-sm" loading="lazy">
+        </main>
 
 <footer class="bg-slate-900 text-slate-500 py-12 text-center text-sm">
     <div class="max-w-4xl mx-auto px-4">
@@ -154,147 +94,5 @@
     </div>
 </footer>
 
-<script>
-    // 원문 데이터 구조화
-    const borrowData = [
-        { date: '2025-12-15', source: '이민섭 (조합장 당선인)', amount: 10000000, note: '불법 차입' },
-        { date: '2026-01-02', source: '김용신 (이사 당선인)', amount: 2500000, note: '불법 차입' },
-        { date: '2026-01-05', source: '김순자 (이사 당선인)', amount: 2500000, note: '불법 차입' },
-        { date: '2026-01-06', source: '조항필 (이사 당선인)', amount: 2500000, note: '불법 차입' },
-        { date: '2026-01-07', source: '박지환 (이사 당선인)', amount: 2500000, note: '불법 차입' },
-        { date: '2026-02-10', source: '이민섭 (조합장 당선인)', amount: 5000000, note: '불법 차입' },
-        { date: '2026-03-12', source: '이민섭 (조합장 당선인)', amount: 5000000, note: '불법 차입' },
-        { date: '2026-03-24', source: '최영례 (조합원)', amount: 200000, note: '확인 필요' }
-    ];
-
-    const expenseData = [
-        { cat: '사적 재판 비용 전가', items: '변호사비(600만), 변호사비(330만), 속기록(29.7만), 전자소송비(29.2만)', truth: '실거주 위반 하자를 방어하기 위한 개인 소송임에도 조합의 일인 것처럼 위장하여 전가했습니다.' },
-        { cat: '무단 사무실 운영', items: '계약금/잔금(1000만), 월세(305만), 집기류(81만), 공과금 등', truth: '정식 설립인가 전 기망 목적으로 무단 계약. 임차인 명의 역시 이민섭 개인입니다.' },
-        { cat: '권위 과시 지출', items: '개소식 술판(62.9만), 간판/현수막(65.5만), 명함(11.9만)', truth: '인가 전 가짜 임원 신분으로 술판을 벌이고 명함을 제작하여 주민 돈을 탕진했습니다.' },
-        { cat: '여론 선동 비용', items: '대량 문자비(50만), 안내책자 제작(4.4만)', truth: '비리가 탄로 날까 봐 변명을 위해 주민들을 기망하는 문자를 발송한 비용입니다.' }
-    ];
-
-    const debtData = [
-        { label: '기존 지출 누적액 (1~4월)', val: 27281340 },
-        { label: '본안 소송 변호사비 추정', val: 11000000 },
-        { label: '사무실 무단 유지비 (5~7월)', val: 1937500 },
-        { label: '선동 문자 및 공과금 (5~7월)', val: 800000 },
-        { label: '조합장 급여 소급분 (7.5개월)', val: 38000000 }
-    ];
-
-    const transcript = [
-        { time: '17:55', speaker: '손민혁 대의원', text: '개인 소송 아니라고 한 얘기가 지금 회의록에 들어가야 된다고요.' },
-        { time: '18:13', speaker: '손민혁 대의원', text: '자 그럼 녹취 킵니다.' },
-        { time: '18:30', speaker: '이민섭 조합장', text: '동의해요.' },
-        { time: '35:07', speaker: '이민섭 조합장', text: '근본적인 원인을 여기서 지금 내가 왜 대답을 해? 그거 법원에서 했잖아요.' },
-        { time: '36:04', speaker: '이민섭 조합장', text: '개인 돈으로 하건 조합 비용으로 해서 총회에서 통과시키는 것은 조합에서 결정할 일이에요.' },
-        { time: '38:58', speaker: '이민섭 조합장', text: '소송 피고가 조합이라고 그러면 누가 소송 비용을 내야 되나요?' },
-        { time: '40:09', speaker: '이민섭 조합장', text: '나도 몰라요. 나도 모르니까 변호사한테 위임할 수밖에. 문제가 있으면 법원 판결을 받아오세요.' },
-        { time: '42:59', speaker: '이민섭 조합장', text: '조합의 대표가 받았으니 조합 돈으로 진행할 수밖에요.' },
-        { time: '43:12', speaker: '손민혁 대의원', text: '피고가 조합이 아니라 대표자 임의 사비라고 써 있는데요! 사진 찍어요.' },
-        { time: '45:48', speaker: '이민섭 조합장', text: '(개인 부담 의사 있느냐는 질문에) 없어요.' }
-    ];
-
-    const evidence = [
-        { title: '증거 1 - 대의원 회의 (2025.12.20)', content: '"내가 실거주 했냐는 얘기할 필요가 없어. 내가 안했다고 고백을 해버렸는데... 투표 당일날에는 실거주 안했어요."' },
-        { title: '증거 2 - 조합원 개인 통화 (2025.12.24)', content: '"(위장전입이 맞는 거죠? 질문에) 아니, 그게 위장전입하고 그거하고는 관계가 없다고요."' },
-        { title: '증거 3 - 구로구청 행정면담 (2025.12.29)', content: '"질문: 총회 날에? 총회 날 거주하셨나요? / 답변: 총회 날? 총회 날에는 안 했어요."' }
-    ];
-
-    function initCharts() {
-        // 차입 차트
-        new Chart(document.getElementById('borrowChart'), {
-            type: 'bar',
-            data: {
-                labels: ['이민섭', '이사 4인', '조합원'],
-                datasets: [{
-                    label: '차입액(원)',
-                    data: [20000000, 10000000, 200000],
-                    backgroundColor: ['#ef4444', '#f87171', '#94a3b8']
-                }]
-            },
-            options: { maintainAspectRatio: false }
-        });
-
-        // 부채 랭킹 차트
-        new Chart(document.getElementById('debtRankingChart'), {
-            type: 'bar',
-            data: {
-                labels: ['조합장 급여/상여', '사적 변호사비', '사무실 유지비', '가짜 명함/술판', '선동문자/기타'],
-                datasets: [{
-                    label: '부채액(원)',
-                    data: [38000000, 20889700, 15959050, 1448450, 2721640],
-                    backgroundColor: '#1e293b'
-                }]
-            },
-            options: {
-                indexAxis: 'y',
-                maintainAspectRatio: false,
-                plugins: { title: { display: true, text: '조합이 독박 쓸 뻔한 채무 순위' } }
-            }
-        });
-    }
-
-    function renderContent() {
-        // 차입 테이블
-        const bBody = document.getElementById('borrowTable');
-        borrowData.forEach(d => {
-            bBody.innerHTML += `<tr class="border-b">
-                <td class="p-4">${d.date}</td>
-                <td class="p-4 font-bold">${d.source}</td>
-                <td class="p-4 text-right">${d.amount.toLocaleString()}원</td>
-                <td class="p-4 text-center text-xs text-red-500 font-bold">${d.note}</td>
-            </tr>`;
-        });
-
-        // 지출 테이블
-        const eBody = document.getElementById('expenseTable');
-        expenseData.forEach(d => {
-            eBody.innerHTML += `<tr class="border-b">
-                <td class="p-4 font-bold bg-slate-50 w-48">${d.cat}</td>
-                <td class="p-4 text-xs italic text-slate-500 w-48">${d.items}</td>
-                <td class="p-4 leading-relaxed">${d.truth}</td>
-            </tr>`;
-        });
-
-        // 누적 부채 테이블
-        const dBody = document.getElementById('debtTable');
-        debtData.forEach(d => {
-            dBody.innerHTML += `<tr>
-                <td class="p-4 border">${d.label}</td>
-                <td class="p-4 border text-right font-mono">${d.val.toLocaleString()}원</td>
-            </tr>`;
-        });
-
-        // 녹취록 렌더링
-        const tContainer = document.getElementById('transcriptContainer');
-        transcript.forEach(line => {
-            const isBoss = line.speaker.includes('조합장');
-            tContainer.innerHTML += `
-                <div class="transcript-line ${isBoss ? 'bg-red-50/50' : ''}">
-                    <span class="speaker-name">${line.speaker}</span>
-                    <span class="timestamp">${line.time}</span>
-                    <p class="mt-2 text-slate-700 leading-relaxed pl-2 border-l-2 ${isBoss ? 'border-red-300' : 'border-slate-300'}">${line.text}</p>
-                </div>
-            `;
-        });
-
-        // 증거 렌더링
-        const eList = document.getElementById('evidenceList');
-        evidence.forEach(e => {
-            eList.innerHTML += `
-                <div class="evidence-card p-6 rounded-xl">
-                    <h5 class="font-black text-red-700 mb-3">${e.title}</h5>
-                    <p class="text-slate-800 italic leading-relaxed text-lg">"${e.content}"</p>
-                </div>
-            `;
-        });
-    }
-
-    window.onload = () => {
-        renderContent();
-        initCharts();
-    };
-</script>
 </body>
 </html>
