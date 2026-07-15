@@ -4,74 +4,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>구로동 445-2번지 일원 가로주택정비사업 제1차 비리보고서</title>
-    <meta name="description" content="구로동 445-2번지 일원 가로주택정비사업 관련 제1차 비리보고서 원문 통합본">
-    <meta name="theme-color" content="#0f172a">
+    <meta name="description" content="구로동 445-2번지 일원 가로주택정비사업 관련 제1차 비리보고서">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700;800&display=swap');
-        :root { scroll-behavior: smooth; }
-        body { font-family: 'Pretendard', sans-serif; background-color: #fdfdfd; color: #1e293b; }
-        .hero { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: white; padding: 5rem 1rem; text-align: center; }
-        .report-card { background: white; border-radius: 1rem; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); overflow: hidden; }
-        .chart-container { position: relative; width: 100%; max-width: 600px; margin: 2rem auto; height: 350px; }
-        .btn { padding: 0.75rem 1.5rem; border-radius: 0.5rem; font-weight: 600; transition: all 0.2s; display: inline-block; }
+        /* 기존 디자인 스타일 유지 */
+        .hero {
+            background-color: #0f172a;
+            color: white;
+            padding: 4rem 1rem;
+            text-align: center;
+        }
+        .hero h1 { font-size: 1.875rem; font-weight: 800; line-height: 1.2; margin-bottom: 1rem; }
+        .hero h2 { font-size: 1.25rem; color: #ef4444; font-weight: 700; margin-bottom: 1.5rem; }
+        .hero .description { color: #94a3b8; max-width: 32rem; margin: 0 auto 2rem; }
+        .btn { display: inline-block; padding: 0.75rem 1.5rem; border-radius: 0.5rem; font-weight: 600; transition: all 0.2s; }
         .btn.primary { background-color: #ef4444; color: white; }
-        .btn.primary:hover { background-color: #dc2626; }
         .btn.secondary { background-color: #334155; color: white; margin-left: 0.5rem; }
-        .highlight-box { border-left: 5px solid #ef4444; background-color: #fef2f2; padding: 1.5rem; }
-        .transcript-line { border-bottom: 1px solid #f1f5f9; padding: 1rem 0; }
-        .speaker-name { font-weight: 800; color: #0f172a; min-width: 120px; display: inline-block; }
-        .timestamp { font-size: 0.75rem; color: #94a3b8; margin-left: 0.5rem; }
-        .evidence-card { border: 2px dashed #cbd5e1; background-color: #f8fafc; transition: all 0.3s; }
-        .evidence-card:hover { border-color: #ef4444; background-color: #fff1f2; }
-        .toc-link:hover { color: #ef4444; text-decoration: underline; }
+        
+        .report { padding: 4rem 1rem; background-color: #f8fafc; }
+        .report h2 { font-size: 1.5rem; font-weight: 800; text-align: center; margin-bottom: 0.5rem; }
+        .report p { text-align: center; color: #64748b; margin-bottom: 2rem; }
+        
+        .toc { max-width: 28rem; margin: 0 auto 3rem; background: white; padding: 1.5rem; border-radius: 0.75rem; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+        .toc h3 { font-weight: 700; margin-bottom: 1rem; border-bottom: 1px solid #e2e8f0; padding-bottom: 0.5rem; }
+        .toc ul { list-style: none; padding: 0; }
+        .toc li { margin-bottom: 0.5rem; }
+        .toc a { color: #334155; text-decoration: none; font-size: 0.9375rem; }
+        .toc a:hover { color: #ef4444; }
+
+        /* 이미지 커스텀 스타일 */
         .report-image { 
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
             border: 1px solid #e2e8f0;
             margin-bottom: 2rem;
         }
     </style>
 </head>
-<body>
-
-<!-- Chosen Palette: Deep Slate & Emergency Red (신뢰감 있는 다크 네이비와 경고의 레드) -->
-<!-- Application Structure Plan: 
-     1. Hero & Navigation: 사용자가 보고서의 심각성을 즉각 인지하고 원하는 목차로 이동할 수 있도록 설계.
-     2. Interactive Data View: 차입/지출/부채 추산치를 Chart.js로 시각화하여 숫자의 무게감을 전달.
-     3. Transcript Explorer: 긴 면담 내용을 발언자 중심의 구조로 재설계하여 누가 어떤 말을 했는지 명확히 파악하게 함.
-     4. Evidence Highlighting: 결정적 증거(자백 녹취)를 별도의 카드 섹션으로 분리하여 강조.
--->
-<!-- Visualization & Content Choices:
-     - 1장: 차입 내역 테이블 및 인물별 차입 비중 Bar Chart.
-     - 2장: 부채 추산 누적액에 대한 수평 Bar Chart로 8,000만 원의 위협 시각화.
-     - 4-8장: 면담 내용을 타임라인 기반의 대화 리스트로 구현.
-     - CONFIRMATION: NO SVG graphics used. NO Mermaid JS used.
--->
+<body class="antialiased text-slate-800">
 
 <header class="hero">
-    <div class="max-w-4xl mx-auto px-4">
-        <h1 class="text-3xl md:text-5xl font-extrabold mb-4 leading-tight">
-            구로동 445-2번지 일원<br>가로주택정비사업
-        </h1>
-        <h2 class="text-xl md:text-2xl text-red-400 font-bold mb-6">제1차 비리 실태 보고서</h2>
-        <p class="text-slate-300 mb-8 max-w-2xl mx-auto leading-relaxed text-sm md:text-base">
-            조합이라는 가면을 쓴 개인 사업, 사적으로 유용된 돈과 거짓말의 실체를 밝힙니다. 
-            본 웹페이지는 수집된 모든 비리 사실과 증거 자료를 누구나 쉽게 열람할 수 있도록 제작되었습니다.
+    <div class="container mx-auto">
+        <h1>구로동 445-2번지 일원<br>가로주택정비사업</h1>
+        <h2>제1차 비리보고서</h2>
+        <p class="description">
+            본 웹페이지는 구로동 445-2번지 일원 가로주택정비사업과 관련된 각종 자료와 보고서를 누구나 쉽게 열람할 수 있도록 제작되었습니다.
         </p>
-        <div class="flex flex-wrap justify-center gap-4">
-            <a href="#report" class="btn primary">📖 보고서 읽기</a>
-            <a href="docs/report.pdf" class="btn secondary" target="_blank">📄 원본 PDF 다운로드</a>
+        <div class="flex justify-center gap-2">
+            <a href="docs/report.pdf" class="btn secondary" target="_blank" rel="noopener">📄 PDF 다운로드</a>
         </div>
     </div>
 </header>
 
-        <main class="flex flex-col items-center">
-            <!-- 페이지 순서에 맞춰 나열 (1~17) -->
-            <img src="images/1784100014994-64862b97-a81c-4aeb-a2e8-09dfcaff2845_1.jpg" alt="보고서 1페이지" class="report-image w-full h-auto rounded-sm" loading="lazy">
-            <img src="images/1784100014994-64862b97-a81c-4aeb-a2e8-09dfcaff2845_2.jpg" alt="보고서 2페이지" class="report-image w-full h-auto rounded-sm" loading="lazy">
+<section id="report" class="report">
+    <div class="container mx-auto">
+        <!-- 이미지 리스트 (PC에서 너무 크지 않도록 max-w-4xl 적용) -->
+        <main class="flex flex-col items-center max-w-4xl mx-auto">
+            <img id="page1" src="images/1784100014994-64862b97-a81c-4aeb-a2e8-09dfcaff2845_1.jpg" alt="보고서 1페이지" class="report-image w-full h-auto rounded-sm" loading="lazy">
+            <img id="page2" src="images/1784100014994-64862b97-a81c-4aeb-a2e8-09dfcaff2845_2.jpg" alt="보고서 2페이지" class="report-image w-full h-auto rounded-sm" loading="lazy">
             <img src="images/1784100014994-64862b97-a81c-4aeb-a2e8-09dfcaff2845_3.jpg" alt="보고서 3페이지" class="report-image w-full h-auto rounded-sm" loading="lazy">
-            <img src="images/1784100014994-64862b97-a81c-4aeb-a2e8-09dfcaff2845_4.jpg" alt="보고서 4페이지" class="report-image w-full h-auto rounded-sm" loading="lazy">
+            <img id="page4" src="images/1784100014994-64862b97-a81c-4aeb-a2e8-09dfcaff2845_4.jpg" alt="보고서 4페이지" class="report-image w-full h-auto rounded-sm" loading="lazy">
             <img src="images/1784100014994-64862b97-a81c-4aeb-a2e8-09dfcaff2845_5.jpg" alt="보고서 5페이지" class="report-image w-full h-auto rounded-sm" loading="lazy">
             <img src="images/1784100014994-64862b97-a81c-4aeb-a2e8-09dfcaff2845_6.jpg" alt="보고서 6페이지" class="report-image w-full h-auto rounded-sm" loading="lazy">
             <img src="images/1784100014994-64862b97-a81c-4aeb-a2e8-09dfcaff2845_7.jpg" alt="보고서 7페이지" class="report-image w-full h-auto rounded-sm" loading="lazy">
@@ -81,16 +72,17 @@
             <img src="images/1784100014994-64862b97-a81c-4aeb-a2e8-09dfcaff2845_11.jpg" alt="보고서 11페이지" class="report-image w-full h-auto rounded-sm" loading="lazy">
             <img src="images/1784100014994-64862b97-a81c-4aeb-a2e8-09dfcaff2845_12.jpg" alt="보고서 12페이지" class="report-image w-full h-auto rounded-sm" loading="lazy">
             <img src="images/1784100014994-64862b97-a81c-4aeb-a2e8-09dfcaff2845_13.jpg" alt="보고서 13페이지" class="report-image w-full h-auto rounded-sm" loading="lazy">
-            <img src="images/1784100014994-64862b97-a81c-4aeb-a2e8-09dfcaff2845_14.jpg" alt="보고서 14페이지" class="report-image w-full h-auto rounded-sm" loading="lazy">
+            <img id="page14" src="images/1784100014994-64862b97-a81c-4aeb-a2e8-09dfcaff2845_14.jpg" alt="보고서 14페이지" class="report-image w-full h-auto rounded-sm" loading="lazy">
             <img src="images/1784100014994-64862b97-a81c-4aeb-a2e8-09dfcaff2845_15.jpg" alt="보고서 15페이지" class="report-image w-full h-auto rounded-sm" loading="lazy">
             <img src="images/1784100014994-64862b97-a81c-4aeb-a2e8-09dfcaff2845_16.jpg" alt="보고서 16페이지" class="report-image w-full h-auto rounded-sm" loading="lazy">
-            <img src="images/1784100014994-64862b97-a81c-4aeb-a2e8-09dfcaff2845_17.jpg" alt="보고서 17페이지" class="report-image w-full h-auto rounded-sm" loading="lazy">
+            <img id="page17" src="images/1784100014994-64862b97-a81c-4aeb-a2e8-09dfcaff2845_17.jpg" alt="보고서 17페이지" class="report-image w-full h-auto rounded-sm" loading="lazy">
         </main>
+    </div>
+</section>
 
-<footer class="bg-slate-900 text-slate-500 py-12 text-center text-sm">
-    <div class="max-w-4xl mx-auto px-4">
-        <p>© 2026 구로동 445의 2번지 일원 가로주택정비사업 비리보고서 사이트</p>
-        <p class="mt-2 text-slate-600 font-mono">Verified Evidence-Based Documentation</p>
+<footer class="bg-slate-900 text-slate-400 py-8 text-center text-sm">
+    <div class="container mx-auto">
+        <p>© 2026 구로동 445-2번지 일원 가로주택정비사업 임시총회 발의자 일동</p>
     </div>
 </footer>
 
