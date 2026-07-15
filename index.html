@@ -7,6 +7,7 @@
 
     <meta name="description" content="구로동 445-2번지 일원 가로주택정비사업 관련 제1차 비리보고서">
     <meta name="theme-color" content="#0f172a">
+    <script src="https://cdn.tailwindcss.com"></script>
 
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -98,138 +99,100 @@
 <!-- 제1장 -->
 <!-- ===================================================== -->
 
-<section id="chapter1" class="report-section">
+        <!-- 섹션 1 원문 시작 -->
+        <section id="section-1" class="space-y-10">
+            <div class="border-b-4 border-slate-900 pb-4">
+                <h2 class="text-2xl md:text-3xl font-bold leading-tight">1. 주민 동의·대의원회 승인도 없이 위법한 방법으로 2,728만 원 탕진!</h2>
+            </div>
 
-    <div class="container">
+            <div class="highlight-box p-6 rounded-r-lg">
+                <p class="text-xl font-bold text-red-700 mb-2">대의원회 승인 전면 무시!</p>
+                <p class="text-lg text-red-800 font-semibold leading-snug">
+                    절차를 지키지 않고 개인 사업처럼 주민 몰래 사전 승인 없는 확인된 무단 지출만 2,728만 원,<br>
+                    그대로 뒀다면 "8,000만 원” 독박 쓸 뻔했습니다!
+                </p>
+            </div>
 
-        <span class="chapter-number">
-            Chapter 01
-        </span>
+            <div class="text-justified space-y-4">
+                <p>대의원 당선인들이 2026년 5월 16일 조합사무실을 항의 방문하여 163분간의 혈투 끝에 확보한 결산내역 (1월~4월), 이사회 회의록(6회)과 면담 사실을 통해 추가로 드러난 조합원 동의 없이 집행된 무단 자금 사용 실태를 투명하게 공개합니다.</p>
+                <p>조합원 여러분, 정비사업에서 주민들의 돈을 쓸 때는 반드시 주민 대표 기구인 '대의원회'의 사전 심의와 적법한 의결 승인을 거쳐야 합니다. 하지만 해임 대상자 조합장 이민섭과 이사 박지환, 김용신, 김순자, 조항필 5인은 이러한 법적 절차를 완전히 무시한 채 위법한 이사회를 핑계 삼아 주민 몰래 돈을 차입하여 무단 집행하였습니다.</p>
+            </div>
 
-        <h2>
-            주민 동의 없는 무단 자금 집행
-        </h2>
+            <!-- 차입 내역 테이블 -->
+            <div class="report-card overflow-hidden">
+                <div class="bg-slate-50 px-6 py-4 border-b border-slate-200">
+                    <h3 class="font-bold text-slate-800">※ 확보된 결산내역(1월~4월) 차입내역 정리</h3>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm text-left">
+                        <thead>
+                            <tr class="bg-slate-100 border-b border-slate-200">
+                                <th class="px-4 py-3 font-bold">차입 일자</th>
+                                <th class="px-4 py-3 font-bold">차입처(직책)</th>
+                                <th class="px-4 py-3 font-bold text-right">차입 금액</th>
+                                <th class="px-4 py-3 font-bold text-center">비고</th>
+                            </tr>
+                        </thead>
+                        <tbody id="borrowTableBody">
+                            <!-- JS Rendering -->
+                        </tbody>
+                        <tfoot>
+                            <tr class="bg-red-50 font-bold border-t-2 border-red-200 text-red-700">
+                                <td colspan="2" class="px-4 py-4 text-center text-base">총 차입액 합계 (집행부 밀실 차입)</td>
+                                <td class="px-4 py-4 text-right text-base">30,200,000원</td>
+                                <td class="px-4 py-4 text-center">불법 차입</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
 
-        <p class="lead">
+            <!-- 시각적 강조: 차입 규모 -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+                <div class="chart-container">
+                    <canvas id="borrowChart"></canvas>
+                </div>
+                <div class="bg-amber-50 p-6 rounded-xl border border-amber-200 text-sm italic">
+                    <p class="font-bold text-amber-800 mb-2 text-base">"쌈짓돈처럼 주무른 불법 계좌"</p>
+                    <p class="mb-4">더욱 경악스러운 것은, 공정하고 투명하게 관리되어야 할 주민들의 자금을 정식 조합 계좌가 아닌 조합장 개인의 계좌를 개설하여 구멍가게 쌈짓돈처럼 주무르고 있었다는 사실입니다.</p>
+                    <div class="p-3 bg-white border border-amber-300 rounded font-mono text-center mb-2">
+                        우리은행 1002-166-947453 이민섭
+                    </div>
+                    <p class="text-xs text-slate-500">"A-1구역이 아직 조합설립인가를 못받았습니다. 그래서 일단 조합장의 이름으로 계좌를 열었습니다." (*확보된 결산내역 1~4월 사본 하단 자백)</p>
+                </div>
+            </div>
 
-            확보된 결산자료를 분석한 결과,
-            보고서는 대의원회 승인 없이 차입과 지출이 이루어졌다고
-            주장하며 그 내역을 정리하고 있습니다.
+            <!-- 지출 내역 섹션 -->
+            <div class="mt-16 border-t pt-10">
+                <h3 class="text-xl font-bold mb-6">※ 확보된 결산내역(1월~4월) 지출 항목 정리 및 사실 관계 분석</h3>
+                
+                <div class="report-card overflow-hidden mb-8">
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-sm text-left border-collapse">
+                            <thead>
+                                <tr class="bg-slate-800 text-white">
+                                    <th class="px-4 py-4 font-bold border border-slate-700">지출 카테고리</th>
+                                    <th class="px-4 py-4 font-bold border border-slate-700">장부 속 세부 항목</th>
+                                    <th class="px-4 py-4 font-bold border border-slate-700">조합원들이 알아야 할 숨겨진 진실</th>
+                                </tr>
+                            </thead>
+                            <tbody id="expenseTableBody">
+                                <!-- JS Rendering for Verbatim Content -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
 
-        </p>
-
-        <div class="highlight-box">
-
-            <h3>핵심 내용</h3>
-
-            <ul>
-
-                <li>대의원회 승인 없이 차입 진행</li>
-
-                <li>총 차입액 <strong>30,200,000원</strong></li>
-
-                <li>보고서에서 주장하는 무단 집행 금액 <strong>27,281,340원</strong></li>
-
-                <li>개인 명의 계좌 사용 의혹 제기</li>
-
-            </ul>
-
-        </div>
-
-        <h3>
-            차입 내역
-        </h3>
-
-        <div class="table-wrapper">
-
-            <table>
-
-                <thead>
-
-                    <tr>
-
-                        <th>일자</th>
-                        <th>차입자</th>
-                        <th>금액</th>
-
-                    </tr>
-
-                </thead>
-
-                <tbody>
-
-                    <tr>
-                        <td>2025.12.15</td>
-                        <td>이민섭</td>
-                        <td>10,000,000원</td>
-                    </tr>
-
-                    <tr>
-                        <td>2026.01.02</td>
-                        <td>김용신</td>
-                        <td>2,500,000원</td>
-                    </tr>
-
-                    <tr>
-                        <td>2026.01.05</td>
-                        <td>김순자</td>
-                        <td>2,500,000원</td>
-                    </tr>
-
-                    <tr>
-                        <td>2026.01.06</td>
-                        <td>조항필</td>
-                        <td>2,500,000원</td>
-                    </tr>
-
-                    <tr>
-                        <td>2026.01.07</td>
-                        <td>박지환</td>
-                        <td>2,500,000원</td>
-                    </tr>
-
-                    <tr>
-                        <td>2026.02.10</td>
-                        <td>이민섭</td>
-                        <td>5,000,000원</td>
-                    </tr>
-
-                    <tr>
-                        <td>2026.03.12</td>
-                        <td>이민섭</td>
-                        <td>5,000,000원</td>
-                    </tr>
-
-                    <tr>
-                        <td>2026.03.24</td>
-                        <td>최영례</td>
-                        <td>200,000원</td>
-                    </tr>
-
-                </tbody>
-
-            </table>
-
-        </div>
-
-        <div class="notice">
-
-            <strong>보고서 요약</strong>
-
-            <p>
-
-                보고서는 위 차입이 조합 운영 절차에 따라
-                적법하게 승인되지 않았으며,
-                이후 집행된 지출 역시 조합의 부담으로 이어질 수 있다고
-                주장하고 있습니다.
-
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
+                <div class="bg-slate-900 text-white p-8 rounded-2xl relative overflow-hidden">
+                    <div class="relative z-10 text-center">
+                        <p class="text-slate-400 text-sm mb-2 font-bold uppercase tracking-widest">결론</p>
+                        <p class="text-2xl md:text-3xl font-bold mb-4">우리 1구역 정상 추진을 위해 쓰인 비용은</p>
+                        <p class="text-6xl md:text-7xl font-black text-red-500 mb-4">단돈 '0원'</p>
+                        <p class="text-lg text-slate-300">위 지출 항목들과 사실관계를 면밀히 따져보면 참담한 결론에 도달하게 됩니다.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
 </div>
 
